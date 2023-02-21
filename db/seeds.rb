@@ -5,12 +5,11 @@ puts "🌱 Seeding products..."
         name: Faker::Commerce.product_name,
         description:Faker::Lorem.paragraph,
         price: Faker::Commerce.price,
-        image_url:Faker::LoremFlickr.image(size: "50x60", search_terms: ['clothing'])
-    )
+        image_url: Faker::LoremFlickr.image
 
     
     10.times do 
-        Buyer.create(
+        Seller.create(
             name:Faker::Name.name,
             email:Faker::Internet.email,
             address:Faker::Address.full_address,
