@@ -15,6 +15,7 @@ class ApplicationController < Sinatra::Base
       image_url: params[:image_url]
     )
     product.to_json
+    
   end
 
   delete '/products/:id' do

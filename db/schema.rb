@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_21_212010) do
+ActiveRecord::Schema.define(version: 2023_02_23_125910) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.integer "price"
     t.string "image_url"
+    t.integer "seller_id"
   end
 
   create_table "sellers", force: :cascade do |t|
