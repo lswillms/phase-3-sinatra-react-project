@@ -9,7 +9,7 @@ puts "🌱 Seeding products..."
         seller_id: Faker::Number.within(range: 1..10)
     )
     
-    10.times do 
+    1.times do 
         Seller.create(
             seller_name:Faker::Name.name,
             email:Faker::Internet.email,

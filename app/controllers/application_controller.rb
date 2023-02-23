@@ -7,6 +7,11 @@ class ApplicationController < Sinatra::Base
    product.to_json
   end
 
+  get '/sellers' do
+    seller  = Seller.all
+    seller.to_json
+  end
+
   post '/products' do
     product = Product.create(
       name: params[:name],
