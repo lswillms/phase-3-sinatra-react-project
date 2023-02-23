@@ -5,7 +5,8 @@ puts "🌱 Seeding products..."
         name: Faker::Commerce.product_name,
         description:Faker::Lorem.paragraph,
         price: Faker::Commerce.price,
-        image_url: Faker::LoremFlickr.image
+        image_url: Faker::LoremFlickr.image,
+        seller_id: Faker::Number.within(range: 1..10)
     )
     
     10.times do 
