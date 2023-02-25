@@ -4,13 +4,13 @@ class ApplicationController < Sinatra::Base
  
   get '/products' do
    product = Product.all
-   product.to_json
+   product.to_json(include: :seller)
   end
 
-  get '/sellers' do
-    seller  = Seller.all
-    seller.to_json
-  end
+get '/products/:id' do
+  product  = Product.find(params[:id])
+  product.to_json(include: :seller)
+end
 
   post '/products' do
     product = Product.create(
@@ -37,7 +37,7 @@ class ApplicationController < Sinatra::Base
       price: params[:price],
       image_url: params[:image_url]
     )
-    product.to_json
+    product.to_json(include: :seller)
   end
 
 end
